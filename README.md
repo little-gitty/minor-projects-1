@@ -1,2 +1,2 @@
 # minor-projects-1
-all projects coded by litty-witty{divyansh kaushik} during uni period
+all projects coded by litty-gitty {divyansh kaushik} during uni period
