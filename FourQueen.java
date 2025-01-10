@@ -1,7 +1,7 @@
 public class FourQueen {
-    final int N = 4;
+     int N = 4;
 
-    /* A utility function to print solution */
+    /* A function to print solution */
     void printSolution(int board[][]) {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
@@ -10,8 +10,8 @@ public class FourQueen {
         }
     }
 
-    /* A utility function to check if a queen can
-       be placed on board[row][col]. Note that this
+    /* A function to check if a queen can
+       be placed on board. Note that this
        function is called when "col" queens are
        already placed in columns from 0 to col -1.
        So we need to check only left side for
