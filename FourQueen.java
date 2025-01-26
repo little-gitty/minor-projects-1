@@ -1,5 +1,6 @@
 public class FourQueen {
-     int N = 4;
+    //number of queens to be placed
+     int N;
 
     /* A function to print solution */
     void printSolution(int board[][]) {
@@ -40,6 +41,7 @@ public class FourQueen {
     /* A recursive utility function to solve N
        Queen problem */
     boolean solveNQUtil(int board[][], int col) {
+        N=board.length;
         /* base case: If all queens are placed
            then return true */
         if (col >= N)

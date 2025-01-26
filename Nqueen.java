@@ -1,9 +1,8 @@
 public class Nqueen {
     public static void main(String[] args) {
-        int N = 4;
-        int[][] board = new int[N][N];
-        FourQueen q = new FourQueen();
-        q.solveNQUtil(board, 0);
-        q.printSolution(board);
+        int[][] board = new int[8][8];
+        FourQueen obj=new FourQueen();
+        obj.solveNQUtil(board,0 );
+        obj.printSolution(board);
     }
 }
