@@ -1,8 +1,16 @@
-public class FourQueen {
-     int N = 4;
+
+public class Nqueen {
+     int N;
+     int[][] board;
+     public void set(int N) {
+        this.N = N;
+        board = new int[N][N];
+        solveNQUtil( 0);
+        printSolution();
+     }
 
     /* A function to print solution */
-    void printSolution(int board[][]) {
+    void printSolution() {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
                 System.out.print(" " + board[i][j] + " ");
@@ -16,7 +24,7 @@ public class FourQueen {
        already placed in columns from 0 to col -1.
        So we need to check only left side for
        attacking queens */
-    boolean isSafe(int board[][], int row, int col) {
+    boolean isSafe( int row, int col) {
         int i, j;
 
         // Check this row on left side
@@ -39,7 +47,7 @@ public class FourQueen {
 
     /* A recursive utility function to solve N
        Queen problem */
-    boolean solveNQUtil(int board[][], int col) {
+    boolean solveNQUtil( int col) {
         /* base case: If all queens are placed
            then return true */
         if (col >= N)
@@ -50,12 +58,12 @@ public class FourQueen {
         for (int i = 0; i < N; i++) {
             /* Check if the queen can be placed on
                board[i][col] */
-            if (isSafe(board, i, col)) {
+            if (isSafe( i, col)) {
                 /* Place this queen in board[i][col] */
                 board[i][col] = 1;
 
                 /* recur to place rest of the queens */
-                if (solveNQUtil(board, col + 1) == true)
+                if (solveNQUtil( col + 1) == true)
                     return true;
 
                 /* If placing queen in board[i][col]
