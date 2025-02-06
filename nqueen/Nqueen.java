@@ -1,17 +1,17 @@
 
 public class Nqueen {
-     int N;
-     int[][] board;
-     public void set(int N) {
-        this.N = N;
-        board = new int[N][N];
-        solveNQUtil( 0);
-        printSolution();
-     }
+    int        N;
+    int[][]    board;
+
+    /*set the number of queen and square board for each particular task */
+    public void settask(int N) {
+        this.N  = N;
+        board   = new int[N][N];
+    }
 
     /* A function to print solution */
     void printSolution() {
-        for (int i = 0; i < N; i++) {
+        for(int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
                 System.out.print(" " + board[i][j] + " ");
             System.out.println();
@@ -19,11 +19,11 @@ public class Nqueen {
     }
 
     /* A function to check if a queen can
-       be placed on board. Note that this
-       function is called when "col" queens are
-       already placed in columns from 0 to col -1.
-       So we need to check only left side for
-       attacking queens */
+        be placed on board. Note that this
+        function is called when "col" queens are
+        already placed in columns from 0 to col -1.
+        So we need to check only left side for
+        attacking queens */
     boolean isSafe( int row, int col) {
         int i, j;
 
@@ -46,18 +46,18 @@ public class Nqueen {
     }
 
     /* A recursive utility function to solve N
-       Queen problem */
+        Queen problem */
     boolean solveNQUtil( int col) {
         /* base case: If all queens are placed
-           then return true */
+            then return true */
         if (col >= N)
             return true;
 
         /* Consider this column and try placing
-           this queen in all rows one by one */
+            this queen in all rows one by one */
         for (int i = 0; i < N; i++) {
             /* Check if the queen can be placed on
-               board[i][col] */
+                board[i][col] */
             if (isSafe( i, col)) {
                 /* Place this queen in board[i][col] */
                 board[i][col] = 1;
@@ -67,16 +67,15 @@ public class Nqueen {
                     return true;
 
                 /* If placing queen in board[i][col]
-                   doesn't lead to a solution then
-                   remove queen from board[i][col] */
+                    doesn't lead to a solution then
+                    remove queen from board[i][col] */
                 board[i][col] = 0; // BACKTRACK
             }
         }
 
         /* If the queen cannot be placed in any row in
-           this column col then return false */
+            this column col then return false */
         return false;
     }
 }
 
-   
