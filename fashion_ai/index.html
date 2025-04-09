@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Outfit Advisor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <span class="icon">🌦️</span>
+            <h1>Intelligent Outfit Advisor</h1>
+        </div>
+
+        <!-- City Input Section -->
+        <input type="text" id="address-input" name="address" class="city-input" placeholder="Enter city name or address" autocomplete="on">
+        <button class="recommend-btn">Get Outfit Recommendation</button>
+        <p id="confirmation-message"></p> <!-- Ensure this element exists -->
+
+        <!-- AI Analysis Section -->
+        <div class="ai-analysis-section">
+            <p>👗 Want to get an AI analysis of your outfit?</p>
+            <input type="file" id="ai-file-upload" class="file-upload">
+            <label for="ai-file-upload" class="file-label">Choose File</label>
+            <p>No file chosen</p>
+            <p class="instructions">First, get a weather recommendation. Then upload your outfit photo for AI analysis!</p>
+        </div>
+
+        <!-- Form Section -->
+        <form id="user-form" enctype="multipart/form-data">
+            <label for="form-file-upload">Upload your outfit photo:</label>
+            <input type="file" id="form-file-upload" name="outfitImage" class="file-upload">
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <!-- Recommendations Section -->
+        <div id="recommendations" style="display: none;"></div>
+
+        <!-- Chatbot Communication Section -->
+        <div class="chatbot-section">
+            <h2>Chat with our AI</h2>
+            <div class="chatbox">
+                <textarea id="chat-input" placeholder="Type your message here..."></textarea>
+                <button id="send-chat" class="send-btn">Send</button>
+            </div>
+            <div id="chat-response" class="chat-response"></div>
+        </div>
+    </div>
+</body>
+</html>

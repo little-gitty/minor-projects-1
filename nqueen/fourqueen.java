@@ -6,7 +6,10 @@ public class fourqueen {
         N=input("Enter the number of queens");
         Nqueen q = new Nqueen();
         q.settask(N);
-        q.solveNQUtil(0);
+        for (int i = 0; i < N; i++) {
+            q.solveNQUtil(i);
+        }
+        
         q.printSolution();
     }
     static int input(String s){

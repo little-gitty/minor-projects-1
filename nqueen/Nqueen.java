@@ -15,7 +15,7 @@ public class Nqueen {
             for (int j = 0; j < N; j++)
                 System.out.print(" " + board[i][j] + " ");
             System.out.println();
-        }
+        }System.out.println("\n\n");
     }
 
     /* A function to check if a queen can
@@ -63,8 +63,11 @@ public class Nqueen {
                 board[i][col] = 1;
 
                 /* recur to place rest of the queens */
-                if (solveNQUtil( col + 1) == true)
+                if (solveNQUtil( col + 1) == true){
+                    // this.printSolution();
                     return true;
+                }
+                    
 
                 /* If placing queen in board[i][col]
                     doesn't lead to a solution then
@@ -72,6 +75,7 @@ public class Nqueen {
                 board[i][col] = 0; // BACKTRACK
             }
         }
+        // this.printSolution();
 
         /* If the queen cannot be placed in any row in
             this column col then return false */
