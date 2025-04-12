@@ -20,6 +20,10 @@ function getRecommendation() {
 }
 
 document.querySelector(".recommend-btn").addEventListener("click", () => {
+    getRecommendation(); // Call the function here
+});
+
+document.querySelector(".recommend-btn").addEventListener("click", () => {
     const addressInput = document.getElementById("address-input").value;
     const confirmationMessage = document.getElementById("confirmation-message");
 
