@@ -22,10 +22,14 @@
         <!-- AI Analysis Section -->
         <div class="ai-analysis-section">
             <p>👗 Want to get an AI analysis of your outfit?</p>
-            <input type="file" id="ai-file-upload" class="file-upload">
+            <input type="file" id="ai-file-upload" class="file-upload" accept="image/*">
             <label for="ai-file-upload" class="file-label">Choose File</label>
             <p>No file chosen</p>
             <p class="instructions">First, get a weather recommendation. Then upload your outfit photo for AI analysis!</p>
+            <div id="image-preview" style="margin-top: 10px;">
+                <!-- Image preview will be displayed here -->
+                 
+            </div>
         </div>
 
         <!-- Form Section -->
@@ -48,5 +52,6 @@
             <div id="chat-response" class="chat-response"></div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
